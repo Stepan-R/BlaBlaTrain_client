@@ -5,6 +5,9 @@ body {
 .logo_img {
   width: 70px;
   height: 70px;
+  position: relative;
+  right: 0;
+  top: 0;
 }
 
 .left_block {
@@ -12,6 +15,7 @@ body {
   flex-direction: row;
   gap: 24px;
   margin-left: 50px;
+  align-items: center;
 }
 
 .right_block {
@@ -22,9 +26,14 @@ body {
   gap: 12px;
 }
 
+h1 {
+  color: #101820;
+}
+
 h2 {
   font-size: 18px;
   font-weight: bold;
+  color: #101820;
 }
 
 .layout {
@@ -47,6 +56,9 @@ h2 {
 .plus {
   width: 24px;
   height: 24px;
+  position: relative;
+  right: 0;
+  top: 0;
 }
 
 .right_block_link {
@@ -62,4 +74,67 @@ h2 {
   width: 40px;
   height: 40px;
   cursor: pointer;
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  position: absolute;
+  right: 34px;
+  top: 85px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  transform: translateY(-10px);
+  animation: fadeIn 1s forwards;
+}
+
+.selector {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  text-decoration: none;
+  font-size: 18px;
+  padding-left: 12px;
+  color: #101820;
+}
+
+.selector:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  display: flex;
+  padding-left: 12px;
+  align-items: center;
+  height: 30px;
+  font-size: 18px;
+  border: none;
+  background: none;
+  color: #101820;
+  cursor: pointer;
+}
+
+.btn:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.links {
+  text-decoration: none;
+  color: #101820;
+  font-size: 18px;
+}
+
+.links:hover {
+  color: #060de0;
 }
