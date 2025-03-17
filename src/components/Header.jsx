@@ -42,8 +42,12 @@ export const Header = () => {
         <h1>BlaBlaTrain</h1>
       </div>
       <div className={classes.right_block}>
-        <Link className={classes.links} to='/login'>LogIn</Link>
-        <Link className={classes.links} to='/signup'>SignUp</Link>
+        {!user && (
+          <Link className={classes.links} to='/login'>LogIn</Link>
+        )}
+        {!user && (
+          <Link className={classes.links} to='/signup'>SignUp</Link>
+        )}
         {user && (
           <Link className={classes.right_block_link}>
             <img src='/plus.svg' alt='plusPicture' className={classes.plus} />
