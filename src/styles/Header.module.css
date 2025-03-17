@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+}
+
+.logo_img {
+  width: 70px;
+  height: 70px;
+}
+
+.left_block {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  margin-left: 50px;
+}
+
+.right_block {
+  display: flex;
+  flex-direction: row;
+  margin-right: 50px;
+  align-items: center;
+  gap: 12px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+}
+
+.header_p {
+  color: #060de0;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.plus {
+  width: 24px;
+  height: 24px;
+}
+
+.right_block_link {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  align-items: center;
+  gap: 6px;
+  margin-right: 34px;
+}
+
+.userLogo {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
