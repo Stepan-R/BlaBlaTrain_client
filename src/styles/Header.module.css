@@ -90,6 +90,7 @@ h2 {
   background-color: white;
   transform: translateY(-10px);
   animation: fadeIn 1s forwards;
+  z-index: 2;
 }
 
 .selector {
@@ -120,6 +121,7 @@ h2 {
 
 .btn:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: white;
 }
 
 @keyframes fadeIn {

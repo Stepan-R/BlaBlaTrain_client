@@ -1,0 +1,89 @@
+.layout {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  width: 700px;
+  height: 270px;
+  margin-top: 24px;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.left_block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.right_block {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.time_block {
+  margin-top: 20px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+}
+
+.time {
+  font-size: 28px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+.date {
+  font-size: 14px;
+}
+
+.travel_time {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  color: #20B2AA;
+  font-weight: bold;
+}
+
+span {
+  color: #20B2AA;
+}
+
+.train_info {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 0;
+}
+
+.bottom_info {
+  color: black;
+  margin-left: 50px;
+  font-size: 16px;
+}
+
+.sits_p {
+  font-size: 16px;
+  margin-left: 100px;
+  padding: 0;
+}
+
+.price {
+  font-size: 24px;
+  margin-left: 100px;
+  color: #20B2AA;
+}

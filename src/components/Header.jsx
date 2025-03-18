@@ -49,7 +49,7 @@ export const Header = () => {
           <Link className={classes.links} to='/signup'>SignUp</Link>
         )}
         {user && (
-          <Link className={classes.right_block_link}>
+          <Link to='/publish' className={classes.right_block_link}>
             <img src='/plus.svg' alt='plusPicture' className={classes.plus} />
             <p className={classes.header_p}>Publish a trip</p>
           </Link>

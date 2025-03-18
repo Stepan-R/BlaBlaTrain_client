@@ -1,0 +1,48 @@
+.search_layout {
+  width: 1280px;
+  height: 150px;
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.search_block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+
+.search_trips {
+  margin: 0;
+  margin-left: 24px;
+  font-size: 18px;
+}
+
+.filter_btn {
+  width: 200px;
+  height: 30px;
+  background-color: burlywood;
+  border-radius: 1px;
+}
+
+.filter_btns {
+  margin-right: 12px;
+}
+
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.trips_cities {
+  display: flex;
+  flex-direction: row;
+  margin-top: 12px;
+}
+
+h2 {
+  font-size: 18px;
+}
