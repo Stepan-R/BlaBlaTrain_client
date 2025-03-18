@@ -1,8 +1,18 @@
 import { Search } from '../components/Search';
 import { TripCard } from '../components/TripCard';
 import classes from '../styles/TripsPage.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchTrips } from '../features/tripsSlice';
 
 export const TripsPage = () => {
+  const dispatch = useDispatch();
+  const { trips, loading, error } = useSelector((state) => state.trips);
+
+  useEffect(() => {
+    dispatch(fetchTrips());
+  }, [dispatch]);
+
   return (
     <div className={classes.layout}>
       <div className={classes.trips_cities}>
@@ -21,9 +31,9 @@ export const TripsPage = () => {
         </div>
       </div>
       <div>
-        <TripCard />
-        <TripCard />
-        <TripCard />
+        {trips.map(trip => (
+          <TripCard trip={trip} key={trip._id} />
+        ))}
       </div>
     </div>
   )
