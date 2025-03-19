@@ -1,9 +1,10 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3005/api/trips';
-const token = JSON.parse(localStorage.getItem('user')).token;
+const API_URL = import.meta.env.VITE_API_URL;
 
 const getAuthHeaders = () => {
+const token = JSON.parse(localStorage.getItem('user')).token;
+
   return {
     'Authorization': `Bearer ${token}`,
     'Content-Type': 'application/json'
@@ -32,6 +33,8 @@ export const updateTrip = async (id, formData) => {
 };
 
 export const submitTrip = async (formData) => {
+const token = JSON.parse(localStorage.getItem('user')).token;
+
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append("Authorization", `Bearer ${token}`);
@@ -55,7 +58,7 @@ export const submitTrip = async (formData) => {
     redirect: "follow"
   };
 
-  const response = await fetch("http://localhost:3005/api/trips", requestOptions);
+  const response = await fetch(API_URL, requestOptions);
   
   if (!response.ok) {
     throw new Error('Failed to submit trip');
