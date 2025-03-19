@@ -1,15 +1,11 @@
 import { useState } from 'react';
 import classes from '../styles/CreateTripPage.module.css';
-import { useAuthContext } from '../hooks/useAuthContext';
+import { submitTrip } from '../api/tripService';
 
 export const CreateTripPage = () => {
-  const { user } = useAuthContext();
-  const token = JSON.parse(localStorage.getItem('user')).token;
-  console.log(token);
-
-  const [formData, setFormData] = useState({
-    departureTime: '',
-    arrivingTime: '',
+  const initialFormData = {
+    startTime: '',
+    finishTime: '',
     travelFrom: '',
     travelTo: '',
     startDate: '',
@@ -17,7 +13,8 @@ export const CreateTripPage = () => {
     travelTime: '',
     availableSeats: '',
     price: ''
-  });
+  };
+  const [formData, setFormData] = useState(initialFormData);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,36 +27,32 @@ export const CreateTripPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!user) {
+    const requiredFields = [
+      formData.startTime,
+      formData.finishTime,
+      formData.travelFrom,
+      formData.travelTo,
+      formData.startDate,
+      formData.finishDate,
+      formData.travelTime,
+      formData.availableSeats,
+      formData.price
+    ];
+
+    const allFieldsFilled = requiredFields.every(field => field.trim() !== '');
+
+    if (!allFieldsFilled) {
+      alert('Please fill in all required fields.');
       return;
     }
 
     try {
-      const response = await fetch('http://localhost:3005/api/trips', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          travelFrom: formData.travelFrom,
-          travelTo: formData.travelTo,
-          startDate: formData.startDate,
-          finishDate: formData.finishDate,
-          travelTime: formData.travelTime,
-          avaiableSits: formData.availableSeats,
-          price: formData.price,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      const data = await response.json();
-      console.log('Trip created:', data);
+      const result = await submitTrip(formData);
+      console.log('Trip submitted successfully:', result);
+      
+      setFormData(initialFormData);
     } catch (error) {
-      console.error('Error creating trip:', error);
+      console.error('Error submitting trip:', error);
     }
   };
 
@@ -73,8 +66,8 @@ export const CreateTripPage = () => {
             <input 
               className={classes.post_input}
               type='time'
-              name='departureTime'
-              value={formData.departureTime}
+              name='startTime'
+              value={formData.startTime}
               onChange={handleChange}
             />
 
@@ -82,8 +75,8 @@ export const CreateTripPage = () => {
             <input 
               className={classes.post_input} 
               type='time'
-              name='arrivingTime'
-              value={formData.arrivingTime}
+              name='finishTime'
+              value={formData.finishTime}
               onChange={handleChange}
             />
 

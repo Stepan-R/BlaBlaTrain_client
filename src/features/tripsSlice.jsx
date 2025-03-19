@@ -1,17 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { fetchAllTrips } from '../api/tripService';
 
 export const fetchTrips = createAsyncThunk('trips/fetchTrips', async () => {
-  const token = JSON.parse(localStorage.getItem('user')).token;
-
-  const response = await fetch('http://localhost:3005/api/trips', {
-    headers: {
-      'Authorization': `Bearer ${token}`
-    }
-  });
-  if (!response.ok) {
-    throw new Error('Failed to fetch trips');
-  }
-  return response.json();
+  return await fetchAllTrips();
 });
 
 const tripsSlice = createSlice({

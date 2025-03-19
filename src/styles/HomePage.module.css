@@ -43,3 +43,17 @@
 .btn_link:hover {
   background-color: #073621;
 }
+
+.home_title_2 {
+  height: 40px;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 34px;
+}
+
+.title_2 {
+  font-size: 24px;
+}

@@ -87,3 +87,48 @@ span {
   margin-left: 100px;
   color: #20B2AA;
 }
+
+.card_img {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  right: -80px;
+  top: 70px;
+  margin-left: 12px;
+}
+
+.time_input {
+  width: 80px;
+}
+
+.text_input {
+  width: 100px;
+}
+
+.number_input {
+  width: 40px;
+}
+
+.flex {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.black_color {
+  color: black;
+}
+
+.right_edit_block {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  margin-left: 60px;
+  gap: 30px;
+}
+
+.row_flex {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

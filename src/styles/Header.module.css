@@ -107,7 +107,7 @@ h2 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.btn {
+.modal_btn {
   display: flex;
   padding-left: 12px;
   align-items: center;
@@ -119,9 +119,8 @@ h2 {
   cursor: pointer;
 }
 
-.btn:hover {
+.modal_btn:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  color: white;
 }
 
 @keyframes fadeIn {

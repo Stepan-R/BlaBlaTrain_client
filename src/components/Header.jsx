@@ -67,8 +67,7 @@ export const Header = () => {
         </div>
         {openModal && (
           <div className={classes.modal} ref={modalRef}>
-            <Link to='/' className={classes.selector} >My trips</Link>
-            <button onClick={handleLogOut} className={classes.btn}>Logout</button>
+            <button onClick={handleLogOut} className={classes.modal_btn}>Logout</button>
           </div>
         )}
       </div>
